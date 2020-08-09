@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <body>   
+        <head>
+            <title>Control</title>
+            <link rel="stylesheet" href="Style.css">
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+            <!-- <meta charset="utf-8"> -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+            <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+        
+        </head>
+        <div>
+            <img class="on-img" id="on-img" src="OnApp.png">
+            <img class="off-img" id="off-img" src="OffApp.png">
+            <img id="on-img" src="ezgif.com-gif-maker.gif">
+            <p id="on-p" >روشن</p>
+            <p id="off-p">خاموش</p>
+            <p  style="top: 48%; right: 3%; font-size:4.5vh ;">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;15</p>
+            <p style="top: 33%; right: 3%;">تنظیم دما</p>
+            <input id="rang" class="rang" style="width: 30%;" min="8" max="15" type="range" list="tickmarks">
+
+            <datalist id="tickmarks">
+              <option value="8"></option>
+              <option value="9"></option>
+              <option value="10"></option>
+              <option value="11"></option>
+              <option value="12"></option>
+              <option value="13"></option>
+              <option value="14"></option>
+              <option value="15"></option>
+            </datalist>
+
+            <label class="bottom-on-off switch">
+              <input onclick="show()" type="checkbox" checked>
+              <span class="slider round"></span>
+            </label>
+             
+        </div>
+        <script>
+            function show(){
+                var x=document.getElementById("on-img");
+                if(x.style.display=="none"){
+                    document.getElementById("on-img").style.display="inline";
+                    document.getElementById("off-img").style.display="none";
+                    document.getElementById("on-p").style.visibility="visible";
+                    document.getElementById("off-p").style.visibility="hidden";
+                    document.getElementById("rang").disabled = false;
+                }
+                else{
+                    document.getElementById("off-img").style.display="inline";
+                    document.getElementById("on-img").style.display="none";
+                    document.getElementById("off-p").style.visibility="visible";
+                    document.getElementById("on-p").style.visibility="hidden";
+                    document.getElementById("rang").disabled = true;
+                }
+            }
+        </script>
+    </body>
+</html>
