@@ -136,21 +136,29 @@ input:checked + .slider:before {
   font-size: 3vw;
 }
 .FanGif1{
+  width: 14%;
+    height: 19%;
   position: absolute;
   right: 56%;
   top: 28%;
 }
 .FanGif2{
+  width: 14%;
+    height: 19%;
   position: absolute;
   right: 42%;
   top: 49%;
 }
 .FanGif3{
+  width: 14%;
+    height: 19%;
   position: absolute;
   right: 56%;
   top: 49%;
 }
 .FanGif4{
+  width: 14%;
+    height: 19%;
   position: absolute;
   right: 42%;
   top: 28%;
