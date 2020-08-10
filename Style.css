@@ -1,8 +1,8 @@
 .switch {
    position: relative;
    display: inline-block;
-   width: 60px;
-   height: 34px;
+   width: 6%;
+   height: 5%;
  }
  
  .switch input { 
@@ -26,10 +26,10 @@
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
+  height: 78%;
+  width: 45%;
+  left: 14%;
+  bottom: 13%;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
@@ -56,47 +56,102 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-.on-control{
-  position: absolute;
-}
-
 .on-img{
   position: relative;
-  display: inline-block;
-  text-align: center;
+  /* display: inline-block; */
+  /* text-align: center; */
   width: 100%;
 }
 
 .off-img{
   position: relative;
   display: none;
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
 }
 
-.bottom-on-off {
+.switchbottom {
   position: absolute;
-  top: 26%;
-  right: 20%;
-}
-div p{
-  position: absolute;
-  top: 18%;
-  right: 12%;
-  font-size: 3vw;
+  top: 9%;
+  right: 16%;
 }
 #on-p{
-  visibility: visible; 
+  visibility: visible;
+  position: absolute;
+  top: 13%;
+  right: 16%;
+  font-size: 3vw;
+  text-align: center; 
 }
 
 #off-p{
   visibility: hidden;
+  position: absolute;
+  top: 13%;
+  right: 15%;
+  font-size: 3vw;
+  text-align: center;
 }
 
 .rang{
   position: absolute;
-  top: 49%;
-  right: 3.5%;
+  top: 15%;
+  right: 28.5%;
+  
 }
-/*
-*/
+.p-relative{
+  position: relative;
+}
+.slider-horizontal{
+  position: absolute !important;
+  top: 15%;
+  left: 10%;
+  background-color: transparent;
+}
+.slider.slider-horizontal::before{
+  display: none;
+  background-color: transparent;
+}
+.slider-horizontal1{
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* .slider.slider-horizontal::before{
+  background-color: transparent;
+} */
+.tooltip.tooltip-main.bs-tooltip-top{
+  margin-top: 0 !important;
+}
+.slider .tooltip.bs-tooltip-top{
+  margin-top: 0 !important;
+}
+.tooltip-inner{
+  display: none;
+}
+.Temperature{
+  position: absolute;
+  top: 7%;
+  right: 30%;
+  font-size: 3vw;
+}
+.FanGif1{
+  position: absolute;
+  right: 56%;
+  top: 28%;
+}
+.FanGif2{
+  position: absolute;
+  right: 42%;
+  top: 49%;
+}
+.FanGif3{
+  position: absolute;
+  right: 56%;
+  top: 49%;
+}
+.FanGif4{
+  position: absolute;
+  right: 42%;
+  top: 28%;
+}

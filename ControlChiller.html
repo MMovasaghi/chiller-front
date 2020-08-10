@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Control</title>
+        <link rel="stylesheet" href="./css/bootstrap-slider.css">
+        <link rel="stylesheet" href="Style.css">
+        <!-- <link rel="stylesheet" href="./css/bootstrap-slider.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
     <body>   
-        <head>
-            <title>Control</title>
-            <link rel="stylesheet" href="Style.css">
-            <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-                
-        </head>
-        <div>
-            <img class="on-img" id="on-img" src="OnApp.png">
-            <img class="off-img" id="off-img" src="OffApp.png">
-            <img id="on-img" src="ezgif.com-gif-maker.gif">
+        <div class="p-relative">
+            <img class="on-img" id="on-img" src="./OnApp.png">
+            <img class="off-img" id="off-img" src="./OffApp.png">
             <p id="on-p" >روشن</p>
             <p id="off-p">خاموش</p>
-            <p  style="top: 48%; right: 3%; font-size:4.5vh ;">8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;15</p>
-            <p style="top: 33%; right: 3%;">تنظیم دما</p>
-            <input id="rang" class="rang" style="width: 30%;" min="8" max="15" type="range" list="tickmarks">
+            <p class="Temperature">تنظیم دما</p>
 
-            <datalist id="tickmarks">
-              <option value="8"></option>
-              <option value="9"></option>
-              <option value="10"></option>
-              <option value="11"></option>
-              <option value="12"></option>
-              <option value="13"></option>
-              <option value="14"></option>
-              <option value="15"></option>
-            </datalist>
+            <!-- <input id="rang" class="rang" min="8" max="15" type="range" list="tickmarks"> -->
+            <input id="rang" class="rang" type="text" data-slider-ticks="[8, 9, 10, 11, 12,13,14,15]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["8", "9", "10", "11", "12","13","14","15"]'/>
+            <img id ="gif1" class="FanGif1" src="1.gif">
+            <img id ="gif2" class="FanGif2" src="2.gif">
+            <img id ="gif3" class="FanGif3" src="3.gif">
+            <img id ="gif4" class="FanGif4" src="4.gif">
+            
 
-            <label class="bottom-on-off switch">
-              <input onclick="show()" type="checkbox" checked>
+            <!-- <datalist style="position: absolute;" id="tickmarks"> -->
+              <!-- <option  style="position: absolute;" value="8" label="asdad">vffffgdgdfd</option> -->
+              <!-- <option value="9"></option> -->
+              <!-- <option value="10"></option> -->
+              <!-- <option value="11"></option> -->
+              <!-- <option value="12"></option> -->
+              <!-- <option value="13"></option> -->
+              <!-- <option value="14"></option> -->
+              <!-- <option value="15"></option> -->
+            <!-- </datalist>  -->
+
+            <label class="switchbottom switch">
+              <input onclick="show()" type="checkbox" checked/>
               <span class="slider round"></span>
             </label>
              
         </div>
+
+        <script src="./js/bootstrap-slider.js"></script>
+        <script src="./js/bootstrap-slider.min.js"></script>
+        <script>
+            var slider = new Slider("#rang", { 
+                ticks: [8, 9, 10, 11, 12,13,14,15], 
+                ticks_labels: ["8", "9", "10", "11", "12","13","14","15"], 
+                ticks_snap_bounds: 1
+             });
+        </script>
+
         <script>
             function show(){
                 var x=document.getElementById("on-img");
                 if(x.style.display=="none"){
                     document.getElementById("on-img").style.display="inline";
+                    document.getElementById("gif1").style.visibility="visible";
+                    document.getElementById("gif2").style.visibility="visible";
+                    document.getElementById("gif3").style.visibility="visible";
+                    document.getElementById("gif4").style.visibility="visible";
                     document.getElementById("off-img").style.display="none";
                     document.getElementById("on-p").style.visibility="visible";
                     document.getElementById("off-p").style.visibility="hidden";
-                    document.getElementById("rang").disabled = false;
+                    var ele = document.getElementsByClassName("slider slider-horizontal");
+                     ele[0].style['pointer-events']= "auto";
+                     ele[0].style.opacity = "1";
                 }
                 else{
                     document.getElementById("off-img").style.display="inline";
                     document.getElementById("on-img").style.display="none";
+                    document.getElementById("gif1").style.visibility="hidden";
+                    document.getElementById("gif2").style.visibility="hidden";
+                    document.getElementById("gif3").style.visibility="hidden";
+                    document.getElementById("gif4").style.visibility="hidden";
                     document.getElementById("off-p").style.visibility="visible";
                     document.getElementById("on-p").style.visibility="hidden";
-                    document.getElementById("rang").disabled = true;
+                    var ele = document.getElementsByClassName("slider slider-horizontal");
+                     ele[0].style['pointer-events']= "none";
+                     ele[0].style.opacity = "0.5";
                 }
             }
         </script>
