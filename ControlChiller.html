@@ -10,31 +10,21 @@
     </head>
 
     <body>   
-        <div class="p-relative">
-            <img class="on-img" id="on-img" src="./OnApp.png">
-            <img class="off-img" id="off-img" src="./OffApp.png">
-            <p id="on-p" >روشن</p>
-            <p id="off-p">خاموش</p>
-            <p class="Temperature">تنظیم دما</p>
+        <div class="position-div">
 
-            <!-- <input id="rang" class="rang" min="8" max="15" type="range" list="tickmarks"> -->
-            <input id="rang" class="rang" type="text" data-slider-ticks="[8, 9, 10, 11, 12,13,14,15]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["8", "9", "10", "11", "12","13","14","15"]'/>
-            <img id ="gif1" class="FanGif1" src="1.gif">
-            <img id ="gif2" class="FanGif2" src="2.gif">
-            <img id ="gif3" class="FanGif3" src="3.gif">
-            <img id ="gif4" class="FanGif4" src="4.gif">
+            <img class="background-imgOn" id="background-imgOn" src="image/OnApp.png">
+            <img class="background-imgOff" id="background-imgOff" src="image/OffApp.png">
+
+            <span class="label-on" id="label-on" >روشن</span>
+            <span class="label-off" id="label-off">خاموش</span>
+            <span class="label-temperature">تنظیم دما</span>
+
+            <input class="range-sliders" id="range-sliders" type="text" data-slider-ticks="[8, 9, 10, 11, 12,13,14,15]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["8", "9", "10", "11", "12","13","14","15"]'/>
             
-
-            <!-- <datalist style="position: absolute;" id="tickmarks"> -->
-              <!-- <option  style="position: absolute;" value="8" label="asdad">vffffgdgdfd</option> -->
-              <!-- <option value="9"></option> -->
-              <!-- <option value="10"></option> -->
-              <!-- <option value="11"></option> -->
-              <!-- <option value="12"></option> -->
-              <!-- <option value="13"></option> -->
-              <!-- <option value="14"></option> -->
-              <!-- <option value="15"></option> -->
-            <!-- </datalist>  -->
+            <img id ="TopRightGif" class="m-FanGif1" src="gif/TopRight.gif">
+            <img id ="BottonLeftGif" class="m-FanGif2" src="gif/BottonLeft.gif">
+            <img id ="TopLeftGif" class="m-FanGif3" src="gif/TopLeft.gif">
+            <img id ="BottonRightGif" class="m-FanGif4" src="gif/BottonRight.gif">
 
             <label class="switchbottom switch">
               <input onclick="show()" type="checkbox" checked/>
@@ -46,7 +36,7 @@
         <script src="./js/bootstrap-slider.js"></script>
         <script src="./js/bootstrap-slider.min.js"></script>
         <script>
-            var slider = new Slider("#rang", { 
+            var slider = new Slider("#range-sliders", { 
                 ticks: [8, 9, 10, 11, 12,13,14,15], 
                 ticks_labels: ["8", "9", "10", "11", "12","13","14","15"], 
                 ticks_snap_bounds: 1
@@ -55,32 +45,32 @@
 
         <script>
             function show(){
-                var x=document.getElementById("on-img");
+                var x=document.getElementById("background-imgOn");
                 if(x.style.display=="none"){
-                    document.getElementById("on-img").style.display="inline";
-                    document.getElementById("gif1").style.visibility="visible";
-                    document.getElementById("gif2").style.visibility="visible";
-                    document.getElementById("gif3").style.visibility="visible";
-                    document.getElementById("gif4").style.visibility="visible";
-                    document.getElementById("off-img").style.display="none";
-                    document.getElementById("on-p").style.visibility="visible";
-                    document.getElementById("off-p").style.visibility="hidden";
-                    var ele = document.getElementsByClassName("slider slider-horizontal");
-                     ele[0].style['pointer-events']= "auto";
-                     ele[0].style.opacity = "1";
+                    document.getElementById("background-imgOn").style.display="inline";
+                    document.getElementById("TopRightGif").style.visibility="visible";
+                    document.getElementById("BottonLeftGif").style.visibility="visible";
+                    document.getElementById("TopLeftGif").style.visibility="visible";
+                    document.getElementById("BottonRightGif").style.visibility="visible";
+                    document.getElementById("background-imgOff").style.display="none";
+                    document.getElementById("label-on").style.visibility="visible";
+                    document.getElementById("label-off").style.visibility="hidden";
+                    var element = document.getElementsByClassName("slider slider-horizontal");
+                    element[0].style['pointer-events']= "auto";
+                    element[0].style.opacity = "1";
                 }
                 else{
-                    document.getElementById("off-img").style.display="inline";
-                    document.getElementById("on-img").style.display="none";
-                    document.getElementById("gif1").style.visibility="hidden";
-                    document.getElementById("gif2").style.visibility="hidden";
-                    document.getElementById("gif3").style.visibility="hidden";
-                    document.getElementById("gif4").style.visibility="hidden";
-                    document.getElementById("off-p").style.visibility="visible";
-                    document.getElementById("on-p").style.visibility="hidden";
-                    var ele = document.getElementsByClassName("slider slider-horizontal");
-                     ele[0].style['pointer-events']= "none";
-                     ele[0].style.opacity = "0.5";
+                    document.getElementById("background-imgOff").style.display="inline";
+                    document.getElementById("background-imgOn").style.display="none";
+                    document.getElementById("TopRightGif").style.visibility="hidden";
+                    document.getElementById("BottonLeftGif").style.visibility="hidden";
+                    document.getElementById("TopLeftGif").style.visibility="hidden";
+                    document.getElementById("BottonRightGif").style.visibility="hidden";
+                    document.getElementById("label-off").style.visibility="visible";
+                    document.getElementById("label-on").style.visibility="hidden";
+                    var element = document.getElementsByClassName("slider slider-horizontal");
+                    element[0].style['pointer-events']= "none";
+                    element[0].style.opacity = "0.5";
                 }
             }
         </script>
